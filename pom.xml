@@ -29,6 +29,7 @@
 		<mysql.version>8.0.33</mysql.version>
 		<lombok.version>1.18.26</lombok.version>
 		<flyway.version>9.16.0</flyway.version>
+		<validation.version>3.0.2</validation.version>
 	</properties>
 
 	<dependencies>
