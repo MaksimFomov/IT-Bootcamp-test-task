@@ -1,10 +1,10 @@
 package com.fomov.itbootcamptesttask.core.service;
 
 import com.fomov.itbootcamptesttask.data.model.User;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface UserService {
 	User addUser(User user);
-	List<User> getAllUsers();
+	Page<User> getAllUsers(Pageable pageable);
 }

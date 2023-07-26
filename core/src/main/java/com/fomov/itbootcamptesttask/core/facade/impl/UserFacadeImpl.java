@@ -8,6 +8,8 @@ import com.fomov.itbootcamptesttask.core.mapper.UserResponseMapper;
 import com.fomov.itbootcamptesttask.core.service.UserService;
 import com.fomov.itbootcamptesttask.data.model.User;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,8 +28,8 @@ public class UserFacadeImpl implements UserFacade {
 	}
 
 	@Override
-	public List<UserResponseDTO> getAllUsers() {
-		List<User> users = userService.getAllUsers();
-		return userResponseMapper.toUserResponseDTOs(users);
+	public List<UserResponseDTO> getAllUsers(Pageable pageable) {
+		Page<User> userPage = userService.getAllUsers(pageable);
+		return userResponseMapper.toUserResponseDTOs(userPage.getContent());
 	}
 }
