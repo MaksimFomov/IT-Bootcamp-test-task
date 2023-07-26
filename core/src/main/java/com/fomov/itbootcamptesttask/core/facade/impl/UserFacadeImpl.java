@@ -1,11 +1,11 @@
 package com.fomov.itbootcamptesttask.core.facade.impl;
 
+import com.fomov.itbootcamptesttask.core.dto.UserRequestDTO;
+import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
 import com.fomov.itbootcamptesttask.core.facade.UserFacade;
 import com.fomov.itbootcamptesttask.core.mapper.UserRequestMapper;
 import com.fomov.itbootcamptesttask.core.mapper.UserResponseMapper;
 import com.fomov.itbootcamptesttask.core.service.UserService;
-import com.fomov.itbootcamptesttask.core.dto.UserRequestDTO;
-import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
 import com.fomov.itbootcamptesttask.data.model.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

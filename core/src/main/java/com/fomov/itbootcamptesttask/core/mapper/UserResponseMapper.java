@@ -12,7 +12,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface UserResponseMapper {
-	@Mapping(target = "fullName", expression = "java(user.getFirstName() + \" \" + user.getLastName() + \" \" + user.getMiddleName())")
+	@Mapping(target = "fullName", expression = "java(user.getLastName() + \" \" + user.getFirstName() + \" \" + user.getMiddleName())")
 	@Mapping(source = "role", target = "role", qualifiedByName = "mapRole")
 	UserResponseDTO toUserResponseDTO(User user);
 
