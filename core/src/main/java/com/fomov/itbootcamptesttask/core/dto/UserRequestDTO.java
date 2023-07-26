@@ -1,4 +1,4 @@
-package com.fomov.itbootcamptesttask.web.dto;
+package com.fomov.itbootcamptesttask.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
