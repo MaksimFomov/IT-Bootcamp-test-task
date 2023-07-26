@@ -4,7 +4,8 @@ import com.fomov.itbootcamptesttask.core.dto.UserRequestDTO;
 import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
 import com.fomov.itbootcamptesttask.core.facade.UserFacade;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -20,18 +21,28 @@ import java.util.List;
 public class UserController {
 	private final UserFacade userFacade;
 
+	private static final Logger logger = LogManager.getLogger(UserController.class);
+
 	@PostMapping("/add")
 	public ResponseEntity<UserResponseDTO> addUser(@RequestBody UserRequestDTO userRequestDTO) {
+		logger.info("Received request to add a new user: {}", userRequestDTO);
+
 		UserResponseDTO userResponseDTO = userFacade.addUser(userRequestDTO);
+		logger.info("User successfully added: {}", userResponseDTO);
+
 		return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
 	}
 
 	@GetMapping("/getAll")
 	public ResponseEntity<List<UserResponseDTO>> getAllUsers(@RequestParam(defaultValue = "0") int page) {
+		logger.info("Received request to get all users, page: {}", page);
+
 		int pageSize = 10;
 
 		Pageable pageable = PageRequest.of(page, pageSize, Sort.by("email").ascending());
 		List<UserResponseDTO> users = userFacade.getAllUsers(pageable);
+
+		logger.info("Returning {} users for page {}", users.size(), page);
 
 		return new ResponseEntity<>(users, HttpStatus.OK);
 
