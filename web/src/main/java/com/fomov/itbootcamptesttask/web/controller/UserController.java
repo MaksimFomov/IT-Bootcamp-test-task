@@ -2,6 +2,8 @@ package com.fomov.itbootcamptesttask.web.controller;
 
 import com.fomov.itbootcamptesttask.core.dto.UserRequestDTO;
 import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
+import com.fomov.itbootcamptesttask.core.exception.UserAlreadyExistsException;
+import com.fomov.itbootcamptesttask.core.exception.UserNotFoundException;
 import com.fomov.itbootcamptesttask.core.facade.UserFacade;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -24,29 +26,46 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@PostMapping
-	public ResponseEntity<UserResponseDTO> addUser(@RequestBody UserRequestDTO userRequestDTO) {
-		logger.info("Received request to add a new user: {}", userRequestDTO);
+	public ResponseEntity<?> addUser(@RequestBody UserRequestDTO userRequestDTO) {
+		try {
+			logger.info("Received request to add a new user: {}", userRequestDTO);
 
-		UserResponseDTO userResponseDTO = userFacade.addUser(userRequestDTO);
-		logger.info("User successfully added: {}", userResponseDTO);
+			UserResponseDTO userResponseDTO = userFacade.addUser(userRequestDTO);
+			logger.info("User successfully added: {}", userResponseDTO);
 
-		return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
+			return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
+		} catch (UserAlreadyExistsException e) {
+			logger.error("User creation failed: {}", e.getMessage());
+			return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+		} catch (IllegalArgumentException e) {
+			logger.error("User creation failed: {}", e.getMessage());
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+		} catch (Exception e) {
+			logger.error("User creation failed: {}", e.getMessage());
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
 	}
 
 	@GetMapping
-	public ResponseEntity<List<UserResponseDTO>> getAllUsers(@RequestParam(defaultValue = "0") int page) {
-		logger.info("Received request to get all users, page: {}", page);
+	public ResponseEntity<?> getAllUsers(@RequestParam(defaultValue = "0") int page) {
+		try {
+			logger.info("Received request to get all users, page: {}", page);
 
-		int pageSize = 10;
+			int pageSize = 10;
 
-		Pageable pageable = PageRequest.of(page, pageSize, Sort.by("email").ascending());
-		List<UserResponseDTO> users = userFacade.getAllUsers(pageable);
+			Pageable pageable = PageRequest.of(page, pageSize, Sort.by("email").ascending());
+			List<UserResponseDTO> users = userFacade.getAllUsers(pageable);
 
-		logger.info("Returning {} users for page {}", users.size(), page);
+			logger.info("Returning {} users for page {}", users.size(), page);
 
-		return new ResponseEntity<>(users, HttpStatus.OK);
-
+			return new ResponseEntity<>(users, HttpStatus.OK);
+		} catch (UserNotFoundException e) {
+			logger.info("Users not found for page {}", page);
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		} catch (Exception e) {
+			logger.error("Error getting users {}", e.getMessage());
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
 	}
-
 }
 
