@@ -4,8 +4,8 @@ import com.fomov.itbootcamptesttask.core.dto.UserRequestDTO;
 import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
 import com.fomov.itbootcamptesttask.core.facade.UserFacade;
 import lombok.AllArgsConstructor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -21,7 +21,7 @@ import java.util.List;
 public class UserController {
 	private final UserFacade userFacade;
 
-	private static final Logger logger = LogManager.getLogger(UserController.class);
+	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@PostMapping("/add")
 	public ResponseEntity<UserResponseDTO> addUser(@RequestBody UserRequestDTO userRequestDTO) {
