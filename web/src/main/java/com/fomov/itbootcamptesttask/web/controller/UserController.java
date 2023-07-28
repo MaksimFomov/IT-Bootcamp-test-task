@@ -23,7 +23,7 @@ public class UserController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-	@PostMapping("/add")
+	@PostMapping
 	public ResponseEntity<UserResponseDTO> addUser(@RequestBody UserRequestDTO userRequestDTO) {
 		logger.info("Received request to add a new user: {}", userRequestDTO);
 
@@ -33,7 +33,7 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
 	}
 
-	@GetMapping("/getAll")
+	@GetMapping
 	public ResponseEntity<List<UserResponseDTO>> getAllUsers(@RequestParam(defaultValue = "0") int page) {
 		logger.info("Received request to get all users, page: {}", page);
 

@@ -7,9 +7,6 @@ public class UserRequestDTO {
 	private String email;
 	private String role;
 
-	public UserRequestDTO() {
-	}
-
 	public UserRequestDTO(String firstName, String lastName, String middleName, String email, String role) {
 		this.firstName = firstName;
 		this.lastName = lastName;
