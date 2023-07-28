@@ -28,7 +28,6 @@
 		<log4j.version>2.20.0</log4j.version>
 		<mysql.version>8.0.33</mysql.version>
 		<lombok.version>1.18.26</lombok.version>
-		<flyway.version>8.0.1</flyway.version>
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 		<jakarta.validation.version>3.0.2</jakarta.validation.version>
 	</properties>

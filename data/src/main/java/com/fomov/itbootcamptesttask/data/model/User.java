@@ -16,27 +16,27 @@ import lombok.NoArgsConstructor;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id", nullable = false)
 	private Long id;
 
-	@Column(name = "first_name", length = 20)
+	@Column(name = "first_name", length = 20, nullable = false)
 	@Size(max = 20, message = "First name must be no more than 20 characters")
 	private String firstName;
 
-	@Column(name = "last_name", length = 40)
+	@Column(name = "last_name", length = 40, nullable = false)
 	@Size(max = 20, message = "Last name must be no more than 40 characters")
 	private String lastName;
 
-	@Column(name = "middle_name", length = 40)
+	@Column(name = "middle_name", length = 40, nullable = false)
 	@Size(max = 20, message = "Middle name must be no more than 40 characters")
 	private String middleName;
 
-	@Column(name = "email", length = 50, unique = true)
+	@Column(name = "email", length = 50, unique = true, nullable = false)
 	@Email(message = "Email must be valid")
 	@Size(max = 50, message = "Email must be no more than 50 characters")
 	private String email;
 
-	@Column(name = "role")
+	@Column(name = "role", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Role role;
 }
