@@ -1,6 +1,5 @@
 package com.fomov.itbootcamptesttask.core;
 
-import com.fomov.itbootcamptesttask.core.dto.UserRequestDTO;
 import com.fomov.itbootcamptesttask.core.exception.UserAlreadyExistsException;
 import com.fomov.itbootcamptesttask.core.service.impl.UserServiceImpl;
 import com.fomov.itbootcamptesttask.data.enums.Role;

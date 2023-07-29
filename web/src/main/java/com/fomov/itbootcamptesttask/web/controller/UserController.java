@@ -5,6 +5,8 @@ import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
 import com.fomov.itbootcamptesttask.core.exception.UserAlreadyExistsException;
 import com.fomov.itbootcamptesttask.core.exception.UserNotFoundException;
 import com.fomov.itbootcamptesttask.core.facade.UserFacade;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +15,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,9 +30,18 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@PostMapping
-	public ResponseEntity<?> addUser(@RequestBody UserRequestDTO userRequestDTO) {
+	public ResponseEntity<?> addUser(@RequestBody @Valid UserRequestDTO userRequestDTO, BindingResult result) {
 		try {
 			logger.info("Received request to add a new user: {}", userRequestDTO);
+
+			if (result.hasErrors()) {
+				StringBuilder errorMessage = new StringBuilder();
+				result.getAllErrors().forEach(error -> errorMessage.append(error.getDefaultMessage()).append("\n"));
+
+				logger.error("User creation failed: {}", errorMessage);
+
+				return ResponseEntity.badRequest().body(errorMessage.toString());
+			}
 
 			UserResponseDTO userResponseDTO = userFacade.addUser(userRequestDTO);
 			logger.info("User successfully added: {}", userResponseDTO);

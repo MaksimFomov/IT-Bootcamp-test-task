@@ -58,7 +58,7 @@ public class UserControllerTest {
 
 	@Test
 	public void testAddUser_InvalidUserRequestDTO() {
-		UserRequestDTO invalidUserRequestDTO = new UserRequestDTO("Maksim", null, "Aleksandrovich", "maks@mail.ru", "ROLE_ADMINISTRATOR");
+		UserRequestDTO invalidUserRequestDTO = new UserRequestDTO("Maksim", "Fomov", "Aleksandrovich", "maks@mail.ru", "ROLE_ADMINISTRATORd");
 
 		ResponseEntity<?> responseEntity = userController.addUser(invalidUserRequestDTO);
 
@@ -95,6 +95,7 @@ public class UserControllerTest {
 		ResponseEntity<?> responseEntity = userController.getAllUsers(page);
 
 		assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
+		assertEquals("Users not found for page " + pageable.getPageNumber(), responseEntity.getBody());
 	}
 }
 

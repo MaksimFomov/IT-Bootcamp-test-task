@@ -1,10 +1,27 @@
 package com.fomov.itbootcamptesttask.core.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class UserRequestDTO {
+	@NotBlank(message = "First name is required")
+	@Size(max = 20, message = "First name should not exceed 20 characters")
 	private String firstName;
+
+	@NotBlank(message = "Last name is required")
+	@Size(max = 40, message = "Last name should should not exceed 40 characters")
 	private String lastName;
+
+	@NotBlank(message = "Middle name is required")
+	@Size(max = 40, message = "Middle name should not exceed 40 characters")
 	private String middleName;
+
+	@Email(message = "Email should be valid")
+	@NotBlank(message = "Email is required")
+	@Size(max = 50, message = "Email should not exceed 50 characters")
 	private String email;
+
 	private String role;
 
 	public UserRequestDTO(String firstName, String lastName, String middleName, String email, String role) {
