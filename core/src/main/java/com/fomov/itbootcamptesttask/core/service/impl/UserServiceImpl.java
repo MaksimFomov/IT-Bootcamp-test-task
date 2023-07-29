@@ -3,7 +3,6 @@ package com.fomov.itbootcamptesttask.core.service.impl;
 import com.fomov.itbootcamptesttask.core.exception.UserAlreadyExistsException;
 import com.fomov.itbootcamptesttask.core.exception.UserNotFoundException;
 import com.fomov.itbootcamptesttask.core.service.UserService;
-import com.fomov.itbootcamptesttask.data.enums.Role;
 import com.fomov.itbootcamptesttask.data.model.User;
 import com.fomov.itbootcamptesttask.data.repository.UserRepository;
 import jakarta.transaction.Transactional;

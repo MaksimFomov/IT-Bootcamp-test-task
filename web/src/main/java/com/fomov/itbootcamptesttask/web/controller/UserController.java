@@ -5,7 +5,6 @@ import com.fomov.itbootcamptesttask.core.dto.UserResponseDTO;
 import com.fomov.itbootcamptesttask.core.exception.UserAlreadyExistsException;
 import com.fomov.itbootcamptesttask.core.exception.UserNotFoundException;
 import com.fomov.itbootcamptesttask.core.facade.UserFacade;
-import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -16,7 +15,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,13 +37,12 @@ public class UserController {
 				result.getAllErrors().forEach(error -> errorMessage.append(error.getDefaultMessage()).append("\n"));
 
 				logger.error("User creation failed: {}", errorMessage);
-
 				return ResponseEntity.badRequest().body(errorMessage.toString());
 			}
 
 			UserResponseDTO userResponseDTO = userFacade.addUser(userRequestDTO);
-			logger.info("User successfully added: {}", userResponseDTO);
 
+			logger.info("User successfully added: {}", userResponseDTO);
 			return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
 		} catch (UserAlreadyExistsException e) {
 			logger.error("User creation failed: {}", e.getMessage());
@@ -70,7 +67,6 @@ public class UserController {
 			List<UserResponseDTO> users = userFacade.getAllUsers(pageable);
 
 			logger.info("Returning {} users for page {}", users.size(), page);
-
 			return new ResponseEntity<>(users, HttpStatus.OK);
 		} catch (UserNotFoundException e) {
 			logger.info("Users not found for page {}", page);
