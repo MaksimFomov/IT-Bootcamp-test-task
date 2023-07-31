@@ -9,10 +9,11 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <name>web</name>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fomov.itbootcamptesttask.web</groupId>
     <artifactId>web</artifactId>
-    <name>web</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -21,4 +22,13 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

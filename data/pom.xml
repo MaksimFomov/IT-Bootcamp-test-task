@@ -9,10 +9,11 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <name>data</name>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fomov.itbootcamptesttask.data</groupId>
     <artifactId>data</artifactId>
-    <name>data</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
