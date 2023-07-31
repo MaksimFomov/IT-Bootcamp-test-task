@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  mysql-db:
+    image: 'mysql:8'
+    container_name: 'mysql-container'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'toortoor'
+      MYSQL_DATABASE: 'it-bootcamp-test-task'
+      MYSQL_USER: 'myuser'
+      MYSQL_PASSWORD: 'myuserpassword'
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build: ./
+    container_name: 'api-container'
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql_data:
