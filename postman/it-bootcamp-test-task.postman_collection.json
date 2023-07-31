@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "a2185535-af17-4b31-8aad-56d39c491000",
+		"name": "it-bootcamp-test-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20314455"
+	},
+	"item": [
+		{
+			"name": "Adding a new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Maksim\",\n  \"lastName\": \"Fomov\",\n  \"middleName\": \"Aleksandrovich\",\n  \"email\": \"maksimfomov26@gmail.com\",\n  \"role\": \"ROLE_ADMINISTRATOR\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding a user with existing mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Maksim\",\n  \"lastName\": \"Fomov\",\n  \"middleName\": \"Aleksandrovich\",\n  \"email\": \"maksimfomov26@gmail.com\",\n  \"role\": \"ROLE_ADMINISTRATOR\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding a user with invalid fields",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"Fomov\",\n  \"middleName\": \"jnrhebvuhrevgercgyvygrevcygrvcrecrcercrec\",\n  \"email\": \"maksimfomov26@gmail.com\",\n  \"role\": \"ROLE_ADMINISTRATOR\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding a user with an invalid email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Maksim\",\n  \"lastName\": \"Fomov\",\n  \"middleName\": \"Aleksandrovich\",\n  \"email\": \"maksimfomovgmail.com\",\n  \"role\": \"ROLE_ADMINISTRATOR\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users?page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
