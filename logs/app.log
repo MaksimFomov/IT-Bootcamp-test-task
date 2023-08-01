@@ -1,0 +1,89 @@
+13:31:55.995 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+13:31:56.012 [main] INFO  com.fomov.itbootcamptesttask.web.ItBootcampTestTaskApplication - Starting ItBootcampTestTaskApplication using Java 17.0.8 with PID 1321 (/Users/maksim/Projects/it-bootcamp-test-task/web/target/classes started by maksim in /Users/maksim/Projects/it-bootcamp-test-task)
+13:31:56.013 [main] INFO  com.fomov.itbootcamptesttask.web.ItBootcampTestTaskApplication - No active profile set, falling back to 1 default profile: "default"
+13:31:56.204 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:31:56.230 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interfaces.
+13:31:56.505 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:31:56.510 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:31:56.510 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:31:56.510 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+13:31:56.555 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:31:56.556 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 522 ms
+13:31:56.642 [main] INFO  org.flywaydb.core.internal.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+13:31:56.642 [main] INFO  org.flywaydb.core.internal.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+13:31:56.642 [main] INFO  org.flywaydb.core.internal.license.VersionPrinter - 
+13:31:56.648 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:31:56.839 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b4ef59f
+13:31:56.840 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:31:56.857 [main] INFO  org.flywaydb.core.internal.database.base.BaseDatabaseType - Database: jdbc:mysql://localhost:3306/it-bootcamp-test-task (MySQL 8.0)
+13:31:56.908 [main] INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.019s)
+13:31:56.917 [main] INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `it-bootcamp-test-task`: 2
+13:31:56.918 [main] INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `it-bootcamp-test-task` is up to date. No migration necessary.
+13:31:56.950 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:31:56.983 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+13:31:56.984 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:31:57.051 [main] INFO  org.hibernate.bytecode.internal.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:31:57.108 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:31:57.195 [main] INFO  org.hibernate.bytecode.internal.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:31:57.424 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:31:57.457 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:31:57.597 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:31:57.727 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:31:57.733 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:31:57.738 [main] INFO  com.fomov.itbootcamptesttask.web.ItBootcampTestTaskApplication - Started ItBootcampTestTaskApplication in 1.886 seconds (process running for 2.421)
+13:32:28.067 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:32:28.076 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:32:28.085 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:32:51.384 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+13:32:51.404 [main] INFO  com.fomov.itbootcamptesttask.web.ItBootcampTestTaskApplication - Starting ItBootcampTestTaskApplication using Java 17.0.8 with PID 1345 (/Users/maksim/Projects/it-bootcamp-test-task/web/target/classes started by maksim in /Users/maksim/Projects/it-bootcamp-test-task)
+13:32:51.405 [main] INFO  com.fomov.itbootcamptesttask.web.ItBootcampTestTaskApplication - No active profile set, falling back to 1 default profile: "default"
+13:32:51.587 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:32:51.610 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+13:32:51.868 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:32:51.871 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:32:51.872 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:32:51.872 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+13:32:51.904 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:32:51.905 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 478 ms
+13:32:51.962 [main] INFO  org.flywaydb.core.internal.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+13:32:51.962 [main] INFO  org.flywaydb.core.internal.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+13:32:51.962 [main] INFO  org.flywaydb.core.internal.license.VersionPrinter - 
+13:32:51.968 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:32:52.080 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fd74223
+13:32:52.082 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:32:52.096 [main] INFO  org.flywaydb.core.internal.database.base.BaseDatabaseType - Database: jdbc:mysql://localhost:3306/it-bootcamp-test-task (MySQL 8.0)
+13:32:52.125 [main] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Schema history table `it-bootcamp-test-task`.`flyway_schema_history` does not exist yet
+13:32:52.128 [main] INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.013s)
+13:32:52.147 [main] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Creating Schema History table `it-bootcamp-test-task`.`flyway_schema_history` ...
+13:32:52.183 [main] INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `it-bootcamp-test-task`: << Empty Schema >>
+13:32:52.186 [main] INFO  org.flywaydb.core.internal.command.DbMigrate - Migrating schema `it-bootcamp-test-task` to version "1 - Create users table"
+13:32:52.203 [main] INFO  org.flywaydb.core.internal.command.DbMigrate - Migrating schema `it-bootcamp-test-task` to version "2 - Add 15 users"
+13:32:52.213 [main] INFO  org.flywaydb.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema `it-bootcamp-test-task`, now at version v2 (execution time 00:00.032s)
+13:32:52.240 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:32:52.265 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+13:32:52.266 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:32:52.334 [main] INFO  org.hibernate.bytecode.internal.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:32:52.389 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:32:52.467 [main] INFO  org.hibernate.bytecode.internal.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:32:52.694 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:32:52.741 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:32:52.881 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:32:53.019 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:32:53.025 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:32:53.029 [main] INFO  com.fomov.itbootcamptesttask.web.ItBootcampTestTaskApplication - Started ItBootcampTestTaskApplication in 1.791 seconds (process running for 2.205)
+13:32:55.872 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:32:55.872 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:32:55.874 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+13:32:55.939 [http-nio-8080-exec-2] INFO  com.fomov.itbootcamptesttask.web.controller.UserController - Received request to add a new user: com.fomov.itbootcamptesttask.core.dto.UserRequestDTO@7258d03f
+13:32:56.005 [http-nio-8080-exec-2] INFO  com.fomov.itbootcamptesttask.web.controller.UserController - User successfully added: com.fomov.itbootcamptesttask.core.dto.UserResponseDTO@1204ba6e
+13:33:21.237 [http-nio-8080-exec-3] INFO  com.fomov.itbootcamptesttask.web.controller.UserController - Received request to get all users, page: 0
+13:33:21.280 [http-nio-8080-exec-3] INFO  com.fomov.itbootcamptesttask.web.controller.UserController - Returning 10 users for page 0
+13:34:03.911 [http-nio-8080-exec-4] INFO  com.fomov.itbootcamptesttask.web.controller.UserController - Received request to add a new user: com.fomov.itbootcamptesttask.core.dto.UserRequestDTO@3a016a7e
+13:34:03.929 [http-nio-8080-exec-4] ERROR com.fomov.itbootcamptesttask.web.controller.UserController - User creation failed: User with this email already exists
+13:34:30.167 [http-nio-8080-exec-5] INFO  com.fomov.itbootcamptesttask.web.controller.UserController - Received request to add a new user: com.fomov.itbootcamptesttask.core.dto.UserRequestDTO@3852d112
+13:34:30.168 [http-nio-8080-exec-5] ERROR com.fomov.itbootcamptesttask.web.controller.UserController - User creation failed: First name is required
+Middle name should not exceed 40 characters
+
+13:46:05.421 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:46:05.424 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:46:05.430 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
